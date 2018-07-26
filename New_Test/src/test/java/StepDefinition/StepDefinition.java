@@ -1,29 +1,24 @@
 package StepDefinition;
 
-import org.openqa.selenium.Capabilities;
+
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriverService;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class StepDefinition {
-	
+	WebDriver driver;
 	@Given("^login app$")
 	public void login_app()  {
-	    // Write code here that turns the phrase above into concrete actions
-		Capabilities caps = new DesiredCapabilities();
-		((DesiredCapabilities) caps).setJavascriptEnabled(true);
-		//PhantomJSDriver driver;
-		WebDriver driver;
-		((DesiredCapabilities) caps).setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,"C:\\PhantomJs\\bin\\Phantomjs\\phantomjs.exe");
-		 driver = new PhantomJSDriver(caps);
-		driver.get("http://opensource-demo.orangehrmlive.com");
+		String ProjectLocation = System.getProperty("user.dir");
+	   System.setProperty("webdriver.gecko.driver",ProjectLocation+"/usr/local/bin");
+		driver = new FirefoxDriver();
+	   driver.get("http://opensource-demo.orangehrmlive.com");
 		String title=driver.getTitle();
-		System.out.println("title");
+		System.out.println(title);
 	System.out.println("Test started");
 	}
 

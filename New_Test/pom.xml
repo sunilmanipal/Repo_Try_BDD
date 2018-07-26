@@ -16,16 +16,12 @@
 		</plugins>
 	</build>
 	<dependencies>
+	
 	<dependency>
-    <groupId>com.codeborne</groupId>
-    <artifactId>phantomjsdriver</artifactId>
-    <version>1.2.1</version>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-server</artifactId>
+    <version>3.1.0</version>
 </dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>2.53.0</version>
-		</dependency>
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
